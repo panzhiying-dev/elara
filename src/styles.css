@@ -1,17 +1,60 @@
-:root {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #f5f7ff;
-  background: #202633;
-}
-
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #f7f3ff; background: #08070e; font-synthesis: none; }
 * { box-sizing: border-box; }
-html, body, #root { width: 100%; height: 100%; margin: 0; }
-
-.avatar-container {
-  width: 100%;
-  height: 100%;
-  min-height: 320px;
-  overflow: hidden;
-}
-
+html, body, #root { width: 100%; min-width: 0; min-height: 100%; margin: 0; }
+body { min-height: 100dvh; overflow: hidden; background: #08070e; }
+button, textarea { font: inherit; } button { border: 0; }
+.elara-app { position: relative; width: 100vw; height: 100dvh; min-height: 500px; overflow: hidden; background: #08070e; }
+.avatar-stage, .avatar-container { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+.avatar-stage { z-index: 0; }
 .avatar-container canvas { display: block; width: 100%; height: 100%; }
+.transform-debug { position: absolute; z-index: 3; top: 76px; left: 24px; width: min(320px, calc(100vw - 48px)); padding: 12px 14px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; color: rgba(255,255,255,.82); background: rgba(17,13,29,.52); box-shadow: 0 12px 30px rgba(0,0,0,.2); backdrop-filter: blur(18px); font: 11px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; pointer-events: none; }
+.transform-debug strong { display: block; margin-bottom: 5px; color: #fff; font: 600 12px/1.4 Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: .04em; }
+.app-topbar { position: absolute; z-index: 3; top: 0; right: 0; left: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: max(18px, env(safe-area-inset-top)) 24px 18px; pointer-events: none; }
+.brand-mark { display: inline-flex; align-items: center; gap: 9px; color: rgba(255,255,255,.9); font-size: 18px; font-weight: 650; letter-spacing: .03em; text-shadow: 0 2px 16px rgba(0,0,0,.65); }
+.brand-orb { width: 9px; height: 9px; border-radius: 50%; background: #f1d9ff; box-shadow: 0 0 14px #e2b8ff; }
+.topbar-actions { display: flex; align-items: center; gap: 9px; pointer-events: auto; }
+.topbar-select-wrap { display: inline-flex; }
+.topbar-select, .topbar-camera-button, .camera-exit-button { border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: rgba(255,255,255,.9); background: rgba(15,12,25,.45); box-shadow: 0 8px 24px rgba(0,0,0,.16); backdrop-filter: blur(16px); }
+.topbar-select { min-width: 116px; padding: 9px 30px 9px 14px; outline: none; cursor: pointer; }
+.topbar-camera-button, .camera-exit-button { padding: 9px 14px; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.topbar-camera-button:hover, .camera-exit-button:hover { background: rgba(255,255,255,.16); transform: translateY(-1px); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.camera-ui { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
+.camera-topbar { position: absolute; top: 0; right: 0; left: 0; display: flex; align-items: center; justify-content: space-between; padding: max(18px, env(safe-area-inset-top)) 24px 18px; }
+.camera-exit-button, .camera-control-button, .action-item { pointer-events: auto; }
+.recording-indicator { display: inline-flex; align-items: center; gap: 7px; color: #fff; font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .08em; text-shadow: 0 2px 14px rgba(0,0,0,.7); }
+.recording-indicator i { width: 8px; height: 8px; border-radius: 50%; background: #ff7189; box-shadow: 0 0 12px #ff7189; animation: recording-pulse 1.2s infinite ease-in-out; }
+.action-panel { position: absolute; top: 50%; right: 24px; width: min(220px, 23vw); max-height: min(52dvh, 430px); padding: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: rgba(17,13,29,.5); box-shadow: 0 16px 42px rgba(0,0,0,.24); backdrop-filter: blur(22px) saturate(130%); transform: translateY(-50%); pointer-events: auto; }
+.action-panel h2 { margin: 0 0 10px; color: rgba(255,255,255,.86); font-size: 13px; font-weight: 600; }
+.action-list { display: grid; max-height: calc(min(52dvh, 430px) - 54px); gap: 6px; overflow-y: auto; scrollbar-width: thin; }
+.action-item { display: flex; align-items: center; gap: 9px; width: 100%; padding: 9px 10px; border: 1px solid transparent; border-radius: 12px; color: rgba(255,255,255,.82); text-align: left; background: transparent; cursor: pointer; }
+.action-item:hover, .action-item.is-active { border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.1); color: #fff; }
+.camera-bottom-controls { position: absolute; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 16px max(22px, env(safe-area-inset-bottom)); }
+.camera-control-buttons { display: flex; align-items: center; gap: 10px; pointer-events: auto; }
+.camera-control-button { min-width: 124px; padding: 11px 17px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: #fdfaff; background: rgba(19,15,32,.58); box-shadow: 0 12px 30px rgba(0,0,0,.22); backdrop-filter: blur(18px); cursor: pointer; }
+.camera-control-button:hover { background: rgba(255,255,255,.18); }
+.camera-control-button.is-recording { border-color: rgba(255,113,137,.5); background: rgba(108,31,48,.64); }
+.camera-control-button:disabled { cursor: wait; opacity: .58; }
+.camera-error { max-width: min(560px, 90vw); margin: 0; padding: 8px 12px; border: 1px solid rgba(255,142,160,.35); border-radius: 10px; color: #ffd5dc; background: rgba(73,27,40,.6); font-size: 12px; text-align: center; }
+.conversation-layer { position: absolute; z-index: 2; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 16px max(18px, env(safe-area-inset-bottom)); pointer-events: none; }
+.assistant-thread { display: flex; width: min(680px, 100%); flex-direction: column; align-items: center; pointer-events: auto; }
+.message-list { display: flex; width: min(680px, 100%); max-height: min(25dvh, 220px); flex-direction: column; gap: 10px; overflow-y: auto; padding: 0 8px 8px; mask-image: linear-gradient(to bottom, transparent 0, #000 20px, #000 100%); scrollbar-width: none; }
+.message-list::-webkit-scrollbar { display: none; }
+.conversation-welcome { padding: 8px 16px 12px; color: rgba(249,245,255,.76); text-align: center; text-shadow: 0 2px 20px rgba(0,0,0,.65); }
+.conversation-welcome p { margin: 0 0 4px; font-size: 16px; } .conversation-welcome span { color: rgba(249,245,255,.54); font-size: 12px; }
+.message-bubble { max-width: min(560px, 94%); padding: 9px 14px; border-radius: 18px; background: rgba(11,9,21,.46); box-shadow: 0 8px 30px rgba(0,0,0,.16); backdrop-filter: blur(14px); text-shadow: 0 1px 14px rgba(0,0,0,.6); }
+.message-bubble .message-role { display: block; margin-bottom: 3px; color: rgba(255,255,255,.5); font-size: 10px; letter-spacing: .08em; } .message-bubble p { margin: 0; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.message-user { align-self: flex-end; background: rgba(52,36,67,.58); }
+.message-assistant { align-self: flex-start; }
+.presence-status { display: inline-flex; align-items: center; gap: 8px; min-height: 22px; color: rgba(255,255,255,.78); font-size: 12px; letter-spacing: .08em; text-shadow: 0 2px 14px rgba(0,0,0,.7); }
+.presence-status i { width: 6px; height: 6px; border-radius: 50%; background: #e2b8ff; box-shadow: 0 0 12px #d5a8ff; } .presence-status.is-thinking i { background: #f1d99e; box-shadow: 0 0 12px #f1d99e; } .presence-status.is-speaking i { background: #82e7df; box-shadow: 0 0 12px #82e7df; } .presence-status.is-error i { background: #ff9eae; box-shadow: 0 0 12px #ff9eae; }
+.message-composer { display: flex; align-items: center; width: min(680px, 100%); min-height: 56px; gap: 8px; padding: 8px 8px 8px 18px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(17,14,29,.5); box-shadow: 0 14px 42px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.08); backdrop-filter: blur(22px) saturate(130%); }
+.composer-input { min-width: 0; flex: 1; resize: none; border: 0; outline: 0; color: #fff; background: transparent; line-height: 1.45; } .composer-input::placeholder { color: rgba(255,255,255,.56); }
+.composer-icon-button, .composer-send-button { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; color: #fff; background: rgba(255,255,255,.1); cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.composer-icon-button:hover, .composer-send-button:hover { background: rgba(255,255,255,.2); transform: translateY(-1px); } .composer-send-button { color: #15101f; background: #f5e8ff; font-size: 18px; font-weight: 700; } .composer-send-button:hover { background: #fff; }
+.composer-hint { color: rgba(255,255,255,.38); font-size: 10px; text-shadow: 0 1px 8px rgba(0,0,0,.7); }
+@media (max-width: 560px) { .conversation-layer { padding-right: 16px; padding-left: 16px; } .message-list { max-height: 24dvh; } .message-composer { min-height: 52px; padding-left: 16px; } .composer-icon-button, .composer-send-button { width: 34px; height: 34px; } .composer-hint { display: none; } }
+@media (max-height: 620px) { .message-list { max-height: 20dvh; } .conversation-layer { padding-bottom: max(12px, env(safe-area-inset-bottom)); } }
+@keyframes recording-pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1); } }
+@media (max-width: 700px) { .app-topbar, .camera-topbar { padding-right: 16px; padding-left: 16px; } .brand-mark { font-size: 16px; } .topbar-select { min-width: 94px; } .topbar-camera-button { padding-inline: 11px; font-size: 12px; } .action-panel { top: auto; right: 16px; bottom: 110px; width: min(190px, calc(48vw - 16px)); max-height: 34dvh; transform: none; } .action-list { max-height: calc(34dvh - 54px); } .camera-control-button { min-width: 112px; padding-inline: 13px; font-size: 12px; } }
+@media (max-width: 700px) { .transform-debug { top: 68px; left: 16px; width: min(300px, calc(100vw - 32px)); font-size: 10px; } }

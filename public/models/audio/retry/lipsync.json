@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "duration": 1.68,
+  "events": [
+    {
+      "start": 0,
+      "end": 0.04,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.04,
+      "end": 0.08,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.08,
+      "end": 0.12,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.12,
+      "end": 0.16,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.16,
+      "end": 0.2,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.2,
+      "end": 0.24,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.24,
+      "end": 0.28,
+      "type": "aa",
+      "weight": 0.31154296238803625
+    },
+    {
+      "start": 0.28,
+      "end": 0.32,
+      "type": "aa",
+      "weight": 0.7846645100914353
+    },
+    {
+      "start": 0.32,
+      "end": 0.36,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 0.36,
+      "end": 0.4,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 0.4,
+      "end": 0.44,
+      "type": "aa",
+      "weight": 0.9286076865797963
+    },
+    {
+      "start": 0.44,
+      "end": 0.48,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 0.48,
+      "end": 0.52,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 0.52,
+      "end": 0.56,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 0.56,
+      "end": 0.6,
+      "type": "aa",
+      "weight": 0.9664114631975947
+    },
+    {
+      "start": 0.6,
+      "end": 0.64,
+      "type": "aa",
+      "weight": 0.5231544706654637
+    },
+    {
+      "start": 0.64,
+      "end": 0.68,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.68,
+      "end": 0.72,
+      "type": "sil",
+      "weight": 0
+    },
+    {
+      "start": 0.72,
+      "end": 0.76,
+      "type": "aa",
+      "weight": 0.3411710328810396
+    },
+    {
+      "start": 0.76,
+      "end": 0.8,
+      "type": "aa",
+      "weight": 0.6684576406283398
+    },
+    {
+      "start": 0.8,
+      "end": 0.84,
+      "type": "aa",
+      "weight": 0.9360495366374492
+    },
+    {
+      "start": 0.84,
+      "end": 0.88,
+      "type": "aa",
+      "weight": 0.9896480968675488
+    },
+    {
+      "start": 0.88,
+      "end": 0.92,
+      "type": "aa",
+      "weight": 0.8547617177184446
+    },
+    {
+      "start": 0.92,
+      "end": 0.96,
+      "type": "aa",
+      "weight": 0.7549716922540819
+    },
+    {
+      "start": 0.96,
+      "end": 1,
+      "type": "aa",
+      "weight": 0.9246346134808549
+    },
+    {
+      "start": 1,
+      "end": 1.04,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 1.04,
+      "end": 1.08,
+      "type": "aa",
+      "weight": 1
+    },
+    {
+      "start": 1.08,
+      "end": 1.12,
+      "type": "aa",
+      "weight": 0.7157664008935752
+    },
+    {
+      "start": 1.12,
+      "end": 1.16,
+      "type": "aa",
+      "weight": 0.5016704781192212
+    },
+    {
+      "start": 1.16,
+      "end": 1.2,
+      "type": "aa",
+      "weight": 0.43151898925788346
+    },
+    {
+      "start": 1.2,
+      "end": 1.24,
+      "type": "aa",
+      "weight": 0.6442280191549072
+    },
+    {
+      "start": 1.24,
+      "end": 1.28,
+      "type": "aa",
+      "weight": 0.776108672005301
+    },
+    {
+      "start": 1.28,
+      "end": 1.32,
+      "type": "aa",
+      "weight": 0.8660273040345874
+    },
+    {
+      "start": 1.32,
+      "end": 1.36,
+      "type": "aa",
+      "weight": 0.7253229989017563
+    },
+    {
+      "start": 1.36,
+      "end": 1.4000000000000001,
+      "type": "aa",
+      "weight": 0.5271471469335371
+    },
+    {
+      "start": 1.4000000000000001,
+      "end": 1.44,
+      "type": "aa",
+      "weight": 0.3700527780729065
+    },
+    {
+      "start": 1.44,
+      "end": 1.48,
+      "type": "aa",
+      "weight": 0.26252334647232145
+    },
+    {
+      "start": 1.48,
+      "end": 1.52,
+      "type": "aa",
+      "weight": 0.5320027834164269
+    },
+    {
+      "start": 1.52,
+      "end": 1.56,
+      "type": "aa",
+      "weight": 0.7833467484301251
+    },
+    {
+      "start": 1.56,
+      "end": 1.6,
+      "type": "aa",
+      "weight": 0.8742174297911361
+    },
+    {
+      "start": 1.6,
+      "end": 1.6400000000000001,
+      "type": "aa",
+      "weight": 0.6567858519297664
+    },
+    {
+      "start": 1.6400000000000001,
+      "end": 1.68,
+      "type": "aa",
+      "weight": 0.37889077052523135
+    }
+  ]
+}
